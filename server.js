@@ -138,7 +138,7 @@ app.post('/getotp',(req,res)=>{
                     res.send({'data':{'username':result[0].username,'password':result[0].password},'otp':otp,'userId':result[0].id});
                 }
                 else{
-                    res.status(500).json('Credential over for sending sms')
+                    res.status(500).json('Out of service, please try different method!')
                 }
               })
               
