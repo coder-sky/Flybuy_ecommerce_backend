@@ -251,12 +251,13 @@ app.post('/incrementCartItme',(req,res)=>{
 })
 
 app.post('/addAddress',(req,res)=>{
-    //console.log(Object.keys(req.body.address).map(function(key){return req.body.address[key]}))
+    console.log(Object.keys(req.body.address).map(function(key){return req.body.address[key]}))
     const values = Object.keys(req.body.address).map(function(key){return req.body.address[key]})
     const q = 'insert into address(`fullname`,`email`,`mobile`,`address`,`city`,`country`,`state`,`zip`,`userId`) values(?)'
     db.query(q,[values],(err,result)=>{
         //console.log(result)
-        res.json(result)
+        if(err) return res.status(500).json(err)
+        res.json("OK")
     })
 })
 
