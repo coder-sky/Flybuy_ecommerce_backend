@@ -334,7 +334,7 @@ app.post('/getcategories',(req,res)=>{
     })
 })
 
-app.listen(8081,'localhost', ()=>{
+app.listen(8081, ()=>{
     console.log(`app listening at http://localhost:8081`)
 
 });
